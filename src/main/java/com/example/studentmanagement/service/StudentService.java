@@ -19,6 +19,8 @@ public class StudentService {
         return studentRepository.getAllStudents();
     }
 
+	// get student by ID
+
     public Student getStudentById(Long id) {
         return studentRepository.getStudentById(id);
     }
