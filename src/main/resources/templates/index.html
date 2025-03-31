@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+    <h2>Student Management System</h2>
+    <form action="/students/save" method="post">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="number" name="age" placeholder="Enter Age" required>
+        <button type="submit">Add Student</button>
+    </form>
+     <ul>
+        <li th:each="student : ${students}">
+            <span th:text="${student.name} + ' (' + ${student.email} + ', Age: ' + ${student.age} + ')'"></span>
+            <a th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a>
+        </li>
+    </ul> 
+</body>
+</html>
